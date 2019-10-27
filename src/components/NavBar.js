@@ -1,21 +1,15 @@
 import React from 'react';
-import { actors } from '../data';
+import { NavLink } from 'react-router-dom';
 
-const Actors = () => {
+const NavBar = () => {
   return (
-    <div>
-      <h1>Actors Page</h1>
-      { actors.map(actor =>
-      <div className="review" key={actor.name}>
-        <h3>Name: {actor.name}</h3>
-        <p>Movies:</p>
-          <ul>
-            {actor.movies.map(movie=><li>{movie}</li>)}
-          </ul>
-    </div>) }
-
+    <div className="navbar">
+      <div><NavLink to="/" >Home</NavLink></div>
+      <div><NavLink to="/movies" >Movies</NavLink></div>
+      <div><NavLink to="/directors" >Directors</NavLink></div>
+      <div><NavLink to="/actors" >Actors</NavLink></div>
     </div>
   );
 };
 
-export default Actors;
+export default NavBar;
